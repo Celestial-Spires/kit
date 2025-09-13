@@ -25,14 +25,10 @@
       }
     },
 
-    "ReplicatedFirst": {
-      "$className": "ReplicatedFirst",
+    "Workspace": {
+      "$className": "Workspace",
       "$ignoreUnknownInstances": true,
-
-      "Init": {
-        "$ignoreUnknownInstances": true,
-        "$path": "src/Init"
-      }
+      "$path": "src/Workspace"
     },
 
     "StarterPlayer": {
