@@ -1,0 +1,5 @@
+*_packages/
+.pesde/
+pesde.lock
+selene.toml
+sourcemap.json

@@ -1,0 +1,53 @@
+{
+  "name": "Celestial Spires - Kit",
+
+  "tree": {
+    "$className": "DataModel",
+
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "$ignoreUnknownInstances": true,
+
+      "Server": {
+        "$ignoreUnknownInstances": true,
+        "$path": "src/Server"
+      }
+    },
+
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+      "$path": "src/Shared",
+
+      "Packages": {
+        "$ignoreUnknownInstances": true,
+        "$path": "roblox_packages"
+      }
+    },
+
+    "ReplicatedFirst": {
+      "$className": "ReplicatedFirst",
+      "$ignoreUnknownInstances": true,
+
+      "Init": {
+        "$ignoreUnknownInstances": true,
+        "$path": "src/Init"
+      }
+    },
+
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "$ignoreUnknownInstances": true,
+
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$ignoreUnknownInstances": true,
+
+        "Client": {
+          "$ignoreUnknownInstances": true,
+          "$path": "src/Client"
+        }
+      }
+    }
+  }
+}
