@@ -37,41 +37,45 @@ function SchedulerManager.init(self: self)
 		end
 
 		if Object:HasTag("SpireObject") then
-			local ObjectName = Object:GetAttribute("Name") or Object.Name
-			local Module
+			local ObjectNames = Object:GetAttribute("Name") or Object.Name
+			local Objects = string.split(ObjectNames, "|")
 
-			if self.RepositoryFolder:WaitForChild(ObjectName) then 
-				Module = self.RepositoryFolder:WaitForChild(ObjectName)
-			elseif ExternalRepository:WaitForChild(ObjectName) then
-				Module = ExternalRepository:WaitForChild(ObjectName)
-			else
-				continue
+			for _, ObjectName in pairs(Objects) do
+				local Module
+
+				if self.RepositoryFolder:WaitForChild(ObjectName) then
+					Module = self.RepositoryFolder:WaitForChild(ObjectName)
+				elseif ExternalRepository:WaitForChild(ObjectName) then
+					Module = ExternalRepository:WaitForChild(ObjectName)
+				else
+					continue
+				end
+
+				Object:SetAttribute("ObjectGUID", game:GetService("HttpService"):GenerateGUID(false))
+
+				Module = Module:Clone()
+
+				Module.Name = Module.Name .. "_" .. Object:GetAttribute("ObjectGUID")
+				Module.Parent = self.ScriptsFolder
+
+				local ObjectPath = Module:FindFirstChild("ObjectPath") or Instance.new("ObjectValue")
+
+				ObjectPath.Name = "ObjectPath"
+				ObjectPath.Value = Object
+
+				ObjectPath.Parent = Module
+
+				local System = require(Module) :: System
+				local StepMode = System["StepMode"] or "PreRender"
+
+				if not table.find(Runtimes, StepMode) then
+					table.insert(Runtimes, StepMode)
+				end
+
+				task.spawn(function()
+					self.Scheduler:AddSystem(System, Module.Name)
+				end)
 			end
-
-			Object:SetAttribute("ObjectGUID", game:GetService("HttpService"):GenerateGUID(false))
-
-			Module = Module:Clone()
-
-			Module.Name = Module.Name .. "_" .. Object:GetAttribute("ObjectGUID")
-			Module.Parent = self.ScriptsFolder
-
-			local ObjectPath = Module:FindFirstChild("ObjectPath") or Instance.new("ObjectValue")
-
-			ObjectPath.Name = "ObjectPath"
-			ObjectPath.Value = Object
-
-			ObjectPath.Parent = Module
-
-			local System = require(Module) :: System
-			local StepMode = System["StepMode"] or "PreRender"
-
-			if not table.find(Runtimes, StepMode) then
-				table.insert(Runtimes, StepMode)
-			end
-
-			task.spawn(function()
-				self.Scheduler:AddSystem(System, Module.Name)
-			end)
 		end
 	end
 

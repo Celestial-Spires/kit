@@ -94,8 +94,9 @@ return function(Player: Player, Character: Model & { Humanoid: Humanoid }): { RB
 			local DownRaycast = workspace:Raycast(Root.Position, Vector3.new(0, -5, 0), RayParams)
 
 			if DownRaycast and DownRaycast.Instance then
-				if DownRaycast.Instance:HasTag("DestroyOnGroundPound") then
+				if DownRaycast.Instance:HasTag("Destroyable") then
 					DownRaycast.Instance:Destroy()
+
 					return
 				end
 

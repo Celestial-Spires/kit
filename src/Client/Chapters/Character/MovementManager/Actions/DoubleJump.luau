@@ -59,6 +59,10 @@ return function(Player: Player, Character: Model & { Humanoid: Humanoid }): { RB
 				end
 
 				Hit:SetAttribute("DoubleJumpDebounce", true)
+				
+				if Hit:FindFirstChild("RefillEmitter") then 
+					Hit.RefillEmitter:Emit(5)
+				end
 
 				JumpCount = 1
 				CanDoubleJump = true

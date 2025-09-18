@@ -1,5 +1,14 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
+
+local Player = Players.LocalPlayer or Players.PlayerAdded:Wait()
+local Character = Player.Character or Player.CharacterAdded:Wait()
+
+if not Character:FindFirstChild("Torso") then 
+	warn("Game is not set to R6 - Spire Kit will not function.")
+	return
+end
 
 task.spawn(function()
 	repeat
