@@ -1,3 +1,28 @@
+--[=[
+	@class DisappearingPlatformObject
+	Disappearing Platforms fade when in contact with a player.
+	@tag Objects
+]=]
+
+--[=[
+	@prop DisappearTime number
+	How much time it takes for the platform to disappear.
+	This has a default value of 1.
+	@within DisappearingPlatformObject
+]=]
+--[=[
+	@prop RespawnTime number
+	How much time it takes for the platform to reappear.
+	This has a default value of 2.
+	@within DisappearingPlatformObject
+]=]
+--[=[
+	@prop Cooldown number
+	How long to wait before damaging the player again.
+	This has a default value of 0.2.
+	@within DisappearingPlatformObject
+]=]
+
 local System = {}
 local Object = nil
 

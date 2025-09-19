@@ -1,3 +1,28 @@
+--[=[
+	@class MovingPlatformObject
+	Moving Platforms continually move inbetween a dynamic amount of points.
+	@tag Objects
+]=]
+
+--[=[
+	@prop Speed number
+	How fast the platform moves.
+	This has a default value of 50.
+	@within MovingPlatformObject
+]=]
+--[=[
+	@prop FrameConsistent boolean
+	If the speed should be consistent, even if lag occurs.
+	This has a default value of true.
+	@within MovingPlatformObject
+]=]
+--[=[
+	@prop SeamlessLoop boolean
+	If the platform should loop around or reverse after finishing a lap.
+	This has a default value of true.
+	@within MovingPlatformObject
+]=]
+
 local System = {}
 local Object = nil
 

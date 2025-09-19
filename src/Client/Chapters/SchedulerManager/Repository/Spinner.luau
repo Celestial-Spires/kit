@@ -1,10 +1,35 @@
+--[=[
+	@class SpinnerObject
+	Spinners continually spin in a specified direction, moving a player with it.
+	@tag Objects
+]=]
+
+--[=[
+	@prop Speed number
+	How fast to spin the spinner.
+	This has a default value of 150.
+	@within SpinnerObject
+]=]
+--[=[
+	@prop Axis Vector3
+	The direction to move the spinner in.
+	This has a default value of Vector3.new(0, 1, 0).
+	@within SpinnerObject
+]=]
+--[=[
+	@prop FrameConsistent boolean
+	If the speed should stay consistent, even if lag occurs.
+	This has a default value of true.
+	@within SpinnerObject
+]=]
+
 local System = {}
 local Object = nil
 
 System.Configuration = {
 	Speed = 150,
 	Axis = Vector3.new(0, 1, 0),
-	FrameConsistent = true
+	FrameConsistent = true,
 }
 System.StepMode = "PreRender"
 

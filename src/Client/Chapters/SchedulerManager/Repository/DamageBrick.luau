@@ -1,3 +1,22 @@
+--[=[
+	@class DamageBrickObject
+	Damage Bricks damage the player when in contact.
+	@tag Objects
+]=]
+
+--[=[
+	@prop Damage number
+	How much to damage the player.
+	This has a default value of 10.
+	@within DamageBrickObject
+]=]
+--[=[
+	@prop Cooldown number
+	How long to wait before damaging the player again.
+	This has a default value of 0.2.
+	@within DamageBrickObject
+]=]
+
 local System = {}
 local Object = nil
 

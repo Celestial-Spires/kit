@@ -1,0 +1,51 @@
+title = "Celestial Spires Kit"
+gitRepoUrl = "https://github.com/Celestial-Spires/kit"
+
+changelog = true
+
+[[classOrder]]
+section = "API"
+tag = "API"
+
+[[classOrder]]
+section = "Objects"
+tag = "Objects"
+
+[[classOrder]]
+section = "Scheduler"
+tag = "Scheduler"
+
+[docusaurus]
+onBrokenLinks = "throw"
+onBrokenMarkdownLinks = "warn"
+
+organizationName = "Celestial Spires"
+projectName = "Spire Kit"
+url = "https://CelestialSpires.github.io"
+baseUrl = "/kit"
+tagline = "Celestial Spires - Spire Kit"
+
+[footer]
+style = "dark"
+copyright = "Built with Moonwave and Docusaurus"
+
+[[navbar.items]]
+href = "https://discord.gg/MXuUrffFDx"
+label = "Discord"
+position = "right"
+
+[[navbar.items]]
+href = "https://create.roblox.com/store/asset/112566854382165/Celestial-Spires-Spire-Kit"
+label = "Kit"
+position = "right"
+
+[home]
+enabled = true
+
+[[home.features]]
+title = "Stackable Objects"
+description = "You can combine objects using the Name attribute (e.g 'Spinner|DamageBrick')."
+
+[[home.features]]
+title = "Easy Custom Objects"
+description = "You can easily create custom objects by putting it in the ReplicatedStorage.Kit.ExternalRepository folder."

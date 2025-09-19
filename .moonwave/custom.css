@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Inter";
+  src: url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+html {
+  font-family: "Inter";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter";
+}
+
+.footer {
+  --ifm-footer-background-color: rgb(39, 31, 75);
+}
+.footer-dark {
+  --ifm-footer-background-color: rgb(39, 31, 75);
+}
+
+:root {
+  --ifm-color-primary: rgb(118, 92, 233);
+  --ifm-color-primary-dark: rgb(118, 92, 233);
+  --ifm-color-primary-darker: rgb(118, 92, 233);
+  --ifm-color-primary-darkest: rgb(118, 92, 233);
+  --ifm-color-primary-light: rgb(118, 92, 233);
+  --ifm-color-primary-lighter: rgb(118, 92, 233);
+  --ifm-color-primary-lightest: rgb(118, 92, 233);
+  --ifm-code-font-size: 90%;
+
+  --ifm-font-family-base: Inter
+}
+
+[class*="admonition"] {
+    --ifm-paragraph-margin-bottom: 0rem
+}

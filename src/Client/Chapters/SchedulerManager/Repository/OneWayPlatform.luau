@@ -1,3 +1,22 @@
+--[=[
+	@class OneWayPlatformObject
+	One Way Platforms can only be moved through in one direction.
+	@tag Objects
+]=]
+
+--[=[
+	@prop Enabled boolean
+	Whether or not to change collisions.
+	This has a default value of true.
+	@within OneWayPlatformObject
+]=]
+--[=[
+	@prop Buffer number
+	How far the player should be before collision is turned off.
+	This has a default value of 0.1.
+	@within OneWayPlatformObject
+]=]
+
 local System = {}
 local Object = nil
 
@@ -32,7 +51,7 @@ function System:Step(API, Configuration)
 	local CharacterPosition = HumanoidRootPart.CFrame.Position
 	local RootPosition = Root.Position
 
-    local TargetPosition = RootPosition + Vector3.one * Configuration.Buffer
+	local TargetPosition = RootPosition + Vector3.one * Configuration.Buffer
 
 	Root.CanCollide = CharacterPosition.Y >= TargetPosition.Y
 end

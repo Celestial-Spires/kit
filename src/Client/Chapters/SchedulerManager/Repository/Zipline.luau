@@ -1,3 +1,28 @@
+--[=[
+	@class ZiplineObject
+	When the hitbox is touched, the player moves along the zipline smoothly.
+	@tag Objects
+]=]
+
+--[=[
+	@prop Speed number
+	How fast the player should move across the zipline.
+	This has a default value of 25.
+	@within ZiplineObject
+]=]
+--[=[
+	@prop Cooldown number
+	How long to wait before letting the player move across the zipline again.
+	This has a default value of 1.
+	@within ZiplineObject
+]=]
+--[=[
+	@prop Points number
+	How many points the rope path should have.
+	This has a default value of 10.
+	@within ZiplineObject
+]=]
+
 local System = {}
 local Object = nil
 
@@ -70,7 +95,7 @@ function MoveAlongPath(Character: Model, Path: { Vector3 }, Speed: number)
 			end
 
 			HumanoidRootPart.CFrame = CFrame.new(NextPoint, Point)
-            HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
+			HumanoidRootPart.AssemblyLinearVelocity = Vector3.zero
 		end
 
 		if Humanoid then
