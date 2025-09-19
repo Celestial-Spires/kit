@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[9621],{84410:e=>{e.exports=JSON.parse('{"sourceUrl":"https://github.com/Celestial-Spires/kit/blob/master","baseUrl":"/Kit/","classOrder":[{"section":"API","tag":"API"},{"section":"Objects","tag":"Objects"},{"section":"Scheduler","tag":"Scheduler"}],"apiCategories":[]}')}}]);
